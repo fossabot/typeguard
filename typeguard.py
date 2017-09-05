@@ -384,10 +384,19 @@ def check_type(argname: str, value, expected_type, memo: _CallMemo) -> None:
         else:
             expected_type = (getattr(expected_type, '__extra__', None) or origin_type or
                              expected_type)
-            if not isinstance(value, expected_type):
+
+            # if isinstance throws a TypeError then we assume value is a TypedDict and ignore the error
+            is_expected_type = False
+            try:
+                is_expected_type = isinstance(value, expected_type)
+            except TypeError:
+                return
+
+            if not is_expected_type:
                 raise TypeError(
                     'type of {} must be {}; got {} instead'.
                     format(argname, qualified_name(expected_type), qualified_name(value)))
+
     elif isinstance(expected_type, TypeVar):
         # Only happens on < 3.6
         check_typevar(argname, value, expected_type, memo)
