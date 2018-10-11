@@ -13,6 +13,8 @@ Python 3) is supported. See below for details.
 There are three principal ways to use type checking, each with its pros and cons:
 
 #. calling ``check_argument_types()`` from within the function body:
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FLiquidInCa%2Ftypeguard.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FLiquidInCa%2Ftypeguard?ref=badge_shield)
+
 
    * debugger friendly
    * cannot check the type of the return value
@@ -119,3 +121,7 @@ Project links
 * `Change log <https://github.com/agronholm/typeguard/blob/master/CHANGELOG.rst>`_
 * `Source repository <https://github.com/agronholm/typeguard>`_
 * `Issue tracker <https://github.com/agronholm/typeguard/issues>`_
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FLiquidInCa%2Ftypeguard.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FLiquidInCa%2Ftypeguard?ref=badge_large)
